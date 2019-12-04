@@ -6,8 +6,6 @@ spl_autoload_register( function($class){
     $class = str_replace( __NAMESPACE__."\\", "", $class );
     // Correct directory separator
     $class = str_replace( array( "\\", "/" ), DIRECTORY_SEPARATOR, __DIR__.DIRECTORY_SEPARATOR.$class.".php" );
-	//var_dump( $class );
-	//var_dump( realpath( $class ) );
     // Get file real path
 	require_once realpath( $class );
 } );
